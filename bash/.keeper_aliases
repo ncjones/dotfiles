@@ -1,0 +1,82 @@
+# vim: filetype=sh
+
+alias keeper='cd $KEEPER'
+
+alias keeper-eclipse='
+ mvn -f $KEEPER/keeper.service.solution/pom.xml\
+  eclipse:eclipse -DdownloadSource=true'
+
+alias keeper-logs='cd $KEEPER/jboss-odin/server/all/log'
+
+alias keeper-jboss='
+ export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64";
+ export JAVA_OPTS="
+  -Xmx1024m -XX:MaxPermSize=356m
+  -Dhttp.proxyHost=localhost -Dhttp.proxyPort=8888
+  -Dhttps.proxyHost=localhost -Dhttps.proxyPort=8888
+  -Dorg.quartz.properties=$KEEPER/quartz.properties";
+ export JBOSS_HOME=$KEEPER/jboss-odin;
+ export JBOSS_CLASSPATH=$KEEPER/quartz/jobs;
+ $JBOSS_HOME/bin/run.sh -c all -b 127.0.0.1 --udp 233.3.4.5
+'
+
+alias keeper-hydra='
+ export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64";
+ export JAVA_OPTS="
+  -Xmx2048m -XX:MaxPermSize=512m
+  -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9797
+  -Dhttp.proxyHost=localhost -Dhttp.proxyPort=8888
+  -Dhttps.proxyHost=localhost -Dhttps.proxyPort=8888";
+ export JBOSS_HOME=~/Development/Code/keeper/jboss-hydra;
+ $JBOSS_HOME/bin/run.sh -c all -b 127.0.0.2
+'
+
+alias runjasper='
+ export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64";
+ export JAVA_OPTS="$JAVA_OPTS -Djs.license.directory=$JASPER_LICENSE_DIR";
+ $CATALINA_HOME/bin/startup.sh
+'
+
+alias stopjasper='
+ $CATALINA_HOME/bin/shutdown.sh
+'
+
+function keeper-mysql() {
+ mysql -ukeeper_keeperbas -pkeeper_keeperbas keeper_keeperbase
+}
+
+alias keeper-mysqldump='
+ mysqldump -ukeeper_keeperbas -pkeeper_keeperbas keeper_keeperbase
+'
+
+alias keeper-mysql-share='
+ mysql -ukeeper_share -pkeeper_share keeper_share'
+
+alias keeper-upgrade-db='
+ $KEEPER/upgrade-db.sh \
+ $KEEPER/odin/sql/upgrade \
+ keeper_keeperbas \
+ keeper_keeperbas \
+ localhost \
+ keeper_keeperbase
+'
+
+alias keeper-db-version='
+ echo "select * from schema_metadata" |
+  keeper-mysql |
+  tail -n 1
+'
+
+alias keeper-reset-db='
+ $KEEPER/scripts/reset-db.sh -f=$HOME/Downloads/keeper-mysql-dumps-v77/keeper_keeperbase.sql
+'
+
+alias keeper-view-config='
+ $KEEPER/deploy-view-configure.sh \
+ $KEEPER/client/keeperbase/viewconfigure \
+ keeper_keeperbas \
+ keeper_keeperbas \
+ localhost \
+ keeper_keeperbase
+'
+

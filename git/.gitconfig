@@ -1,0 +1,12 @@
+[user]
+	name = Nathan Jones
+	email = nathan@ncjones.com
+[core]
+	editor = vim
+[pull]
+	rebase = true
+[alias]
+	st = status
+	graph = log --graph --all --decorate
+[merge]
+	tool = meld
