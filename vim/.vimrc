@@ -23,8 +23,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'tpope/vim-markdown'
 call vundle#end()
 
-
-colorscheme desert
+colorscheme elflord
 filetype plugin indent on
 syntax on
 set laststatus=2
