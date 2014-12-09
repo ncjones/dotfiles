@@ -17,10 +17,13 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'taglist.vim'
 Plugin 'dbext.vim'
+Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-cucumber.git'
 Plugin 'VimClojure'
+Plugin 'pangloss/vim-javascript'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'tpope/vim-markdown'
+Plugin 'groenewege/vim-less'
 call vundle#end()
 
 colorscheme elflord
