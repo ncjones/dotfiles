@@ -41,12 +41,11 @@ set expandtab
 map Q gq
 inoremap <C-U> <C-G>u<C-U>
 map <F2> :NERDTreeToggle<CR>
-map <F3> :TlistToggle<CR>
+map <F3> :NERDTreeFind<CR>
+map <F4> :TlistToggle<CR>
 map <C-j> :GitGutterNextHunk<CR>
 map <C-k> :GitGutterPrevHunk<CR>
 
-augroup vimrcEx
-au!
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
 " When editing a file, always jump to the last known cursor position.
@@ -54,7 +53,6 @@ autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
   \ endif
-augroup END
 
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
