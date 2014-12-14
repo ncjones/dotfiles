@@ -13,4 +13,9 @@ alias proxyoff='export http_proxy='
 alias xclipin='xclip -i -selection clipboard'
 alias xclipout='xclip -o -selection clipboard'
 alias httpd='ruby -run -e httpd . -p 9090'
+# cd to git root
+alias gr='
+ git branch > /dev/null 2>&1 || return 1
+ cd "$(git rev-parse --show-cdup)".
+'
 . ~/.keeper_aliases
