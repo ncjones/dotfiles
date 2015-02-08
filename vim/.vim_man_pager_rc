@@ -1,0 +1,6 @@
+" vim: set filetype=vim :
+source ~/.vim_pager_rc
+set ft=man nomod nolist
+set incsearch
+nmap K :Man <C-R>=expand("<cword>")<CR><CR>
+

@@ -1,0 +1,17 @@
+" vim: set filetype=vim :
+source /usr/share/vim/vimrc
+
+set nocompatible 
+set rtp+=~/.vim/bundle/Vundle.vim 
+call vundle#begin() 
+Plugin 'powerman/vim-plugin-AnsiEsc'
+call vundle#end() 
+
+let $PAGER=''
+syntax on
+colorscheme pablo
+set hlsearch
+map q :q!<CR>
+map <SPACE> <C-D>
+map b <C-U>
+

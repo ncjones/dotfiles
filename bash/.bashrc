@@ -21,15 +21,13 @@ if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
 
-man(){
-    env LESS_TERMCAP_mb=$'\E[01;31m'\
-        LESS_TERMCAP_md=$'\E[01;38;5;74m'\
-        LESS_TERMCAP_me=$'\E[0m'\
-        LESS_TERMCAP_se=$'\E[0m'\
-        LESS_TERMCAP_so=$'\E[38;5;246m'\
-        LESS_TERMCAP_ue=$'\E[0m'\
-        LESS_TERMCAP_us=$'\E[04;38;5;146m'\
-        man "$@"
+export PAGER='vim -R -u ~/.vim_pager_rc -c AnsiEsc -'
+
+function man {
+  PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
+    vim -R -u ~/.vim_man_pager_rc \
+        -\"" \
+    /usr/bin/man $*
 }
 
 # Truncate __git_ps1 and display elipses if it exceeds a maximum length.
