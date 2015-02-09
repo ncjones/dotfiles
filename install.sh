@@ -10,5 +10,9 @@ dirlist=$(find $basedir \
         )
 for d in $dirlist; do
     echo installing $d
-    stow -d $basedir -t $HOME $d
+    install_script=$basedir/$d/install.sh
+    if [ -x $install_script ]; then
+        $install_script
+    fi
+    stow --dir $basedir --target $HOME --ignore 'install.sh' $d
 done

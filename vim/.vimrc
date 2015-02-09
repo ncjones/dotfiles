@@ -4,29 +4,27 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'taglist.vim'
-Plugin 'dbext.vim'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-cucumber.git'
-Plugin 'tfnico/vim-gradle'
-Plugin 'VimClojure'
-Plugin 'pangloss/vim-javascript'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'groenewege/vim-less'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'gmarik/Vundle.vim'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'kien/ctrlp.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'taglist.vim'
+Plug 'dbext.vim'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-cucumber.git'
+Plug 'tfnico/vim-gradle'
+Plug 'VimClojure'
+Plug 'pangloss/vim-javascript'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'tpope/vim-markdown'
+Plug 'groenewege/vim-less'
+call plug#end()
 
 colorscheme elflord
 filetype plugin indent on
