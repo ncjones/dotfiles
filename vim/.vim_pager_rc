@@ -2,10 +2,9 @@
 source /usr/share/vim/vimrc
 
 set nocompatible 
-set rtp+=~/.vim/bundle/Vundle.vim 
-call vundle#begin() 
-Plugin 'powerman/vim-plugin-AnsiEsc'
-call vundle#end() 
+call plug#begin('~/.vim/plugged')
+Plug 'powerman/vim-plugin-AnsiEsc'
+call plug#end() 
 
 let $PAGER=''
 syntax on
