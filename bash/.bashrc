@@ -44,7 +44,7 @@ function __git_ps1_trunc {
     printf "$printf_format" $git_ps1
 }
 
-export PS1='\w\[\e[0;32m\]$(__git_ps1_trunc 28 " %s")\[\e[m\]$ '
+export PS1='\w\[\e[0;32m\]$(__git_ps1_trunc 28 " %s")\[\e[m\]\n$ '
 
 dev_tools=~/Development/Tools
 export ANDROID_HOME=$dev_tools/android-sdk
