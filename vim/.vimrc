@@ -10,6 +10,7 @@ Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'kien/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'rking/ag.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
