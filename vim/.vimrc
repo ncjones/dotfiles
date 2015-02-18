@@ -13,6 +13,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'rking/ag.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'taglist.vim'
