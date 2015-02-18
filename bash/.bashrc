@@ -15,8 +15,6 @@ shopt -s globstar
 . ~/.bash_aliases
 . /etc/bash_completion
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
@@ -53,11 +51,10 @@ export KEEPER=~/Development/Code/keeper
 export JBOSS_HOME=$KEEPER/jboss-odin
 export CATALINA_HOME=$KEEPER/apache-tomcat-7.0.54
 export JASPER_LICENSE_DIR=$KEEPER/reporting-bundle/license
-
+export PATH="$HOME/.rvm/bin:$PATH"
 export PATH=~/.local/bin:$PATH
-export PATH="$PATH:$HOME/.rvm/bin"
 export PATH=$PATH:$dev_tools/maven/bin
-export PATH=$PATH:$dev_tools/roo/bin 
+export PATH=$PATH:$dev_tools/roo/bin
 export PATH=$PATH:$dev_tools/gradle/bin
 export PATH=$PATH:$ANDROID_HOME/build-tools/android-4.4
 export PATH=$PATH:$ANDROID_HOME/platform-tools
