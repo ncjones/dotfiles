@@ -1,3 +1,6 @@
 pip/.pip/cache
 pip/.pip/pip.log
-vim/.vim
+vim/.vim/.netrwhist
+vim/.vim/autoload/
+vim/.vim/bundle/
+vim/.vim/plugged/
