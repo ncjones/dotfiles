@@ -15,6 +15,9 @@ shopt -s globstar
 . ~/.bash_aliases
 . /etc/bash_completion
 
+# set LS_COLORS env var
+eval `dircolors`
+
 if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
