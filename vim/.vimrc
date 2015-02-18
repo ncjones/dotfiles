@@ -7,7 +7,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 Plug 'gmarik/Vundle.vim'
 Plug 'bling/vim-airline'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'kien/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'rking/ag.vim'
