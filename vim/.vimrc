@@ -27,6 +27,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-markdown'
 Plug 'groenewege/vim-less'
+Plug 'powerman/vim-plugin-AnsiEsc', { 'on': 'AnsiEsc' }
 call plug#end()
 
 colorscheme elflord
