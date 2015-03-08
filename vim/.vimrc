@@ -5,6 +5,7 @@ set nocompatible
 filetype off
 
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
 Plug 'gmarik/Vundle.vim'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
@@ -31,19 +32,8 @@ Plug 'powerman/vim-plugin-AnsiEsc', { 'on': 'AnsiEsc' }
 call plug#end()
 
 colorscheme elflord
-filetype plugin indent on
-syntax on
-set laststatus=2
-set backspace=indent,eol,start
-set history=50
-set ruler
-set showcmd
-set incsearch
 set hlsearch
-set tabstop=4
-set expandtab
 map Q gq
-inoremap <C-U> <C-G>u<C-U>
 map <F2> :NERDTreeToggle<CR>
 map <F3> :NERDTreeFind<CR>
 map <F4> :TlistToggle<CR>
