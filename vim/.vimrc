@@ -6,7 +6,6 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
-Plug 'gmarik/Vundle.vim'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'scrooloose/nerdcommenter'
