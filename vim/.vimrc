@@ -28,6 +28,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-markdown'
 Plug 'groenewege/vim-less'
+Plug 'rodjek/vim-puppet'
 Plug 'powerman/vim-plugin-AnsiEsc', { 'on': 'AnsiEsc' }
 call plug#end()
 
