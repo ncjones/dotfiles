@@ -8,8 +8,11 @@ alias la='ls -A'
 alias l='ls -CF'
 alias guerrillamail='~/Development/Code/python-guerrillamail/guerrillamail.py'
 alias roo=roo.sh
-alias proxyon='export http_proxy=http://localhost:8888'
-alias proxyoff='export http_proxy='
+proxy='localhost:8888'
+alias proxyon="\
+  export http_proxy=http://$proxy && \
+  export https_proxy=https://$proxy"
+alias proxyoff='unset http_proxy https_proxy'
 alias xclipin='xclip -i -selection clipboard'
 alias xclipout='xclip -o -selection clipboard'
 alias httpd='ruby -run -e httpd . -p 9090'
