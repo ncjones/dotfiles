@@ -10,3 +10,5 @@
 	graph = log --graph --all --decorate
 [merge]
 	tool = meld
+[push]
+	default = simple
