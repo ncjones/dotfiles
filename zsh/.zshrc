@@ -4,4 +4,4 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git)
 source ~/fasd/fasd
 source $ZSH/oh-my-zsh.sh
-export PATH=$PATH
+source ~/.path

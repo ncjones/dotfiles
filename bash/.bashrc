@@ -48,22 +48,4 @@ function __git_ps1_trunc {
 export PS1='\w\[\e[0;32m\]$(__git_ps1_trunc 28 " %s")\[\e[m\]\n$ '
 
 . ~/z/z.sh
-
-dev_tools=~/Development/Tools
-export ANDROID_HOME=$dev_tools/android-sdk
-export ANDROID_KEYSTORE=/home/nathan/ownCloud/android.keystore
-export PATH="$HOME/.rvm/bin:$PATH"
-export PATH=~/.local/bin:$PATH
-export PATH=$PATH:$dev_tools/maven/bin
-export PATH=$PATH:$dev_tools/roo/bin
-export PATH=$PATH:$dev_tools/gradle/bin
-export PATH=$PATH:$ANDROID_HOME/build-tools/android-4.4
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$dev_tools/apktool
-export PATH=$PATH:$dev_tools/ant/bin
-export PATH=$PATH:$dev_tools/leiningen
-export PATH=$PATH:$dev_tools/activator-1.2.0-minimal
-export PATH=$PATH:$dev_tools/liquibase
-export PATH=$PATH:$dev_tools/heimdall/bin
-
+. ~/.path
