@@ -5,3 +5,4 @@ plugins=(git colored-man z)
 eval `dircolors`
 source $ZSH/oh-my-zsh.sh
 source ~/.path
+bindkey '^R' history-incremental-pattern-search-backward
