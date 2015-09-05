@@ -6,8 +6,6 @@ alias egrep='egrep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias guerrillamail='~/Code/python-guerrillamail/guerrillamail.py'
-alias roo=roo.sh
 proxy='localhost:8888'
 alias proxyon="\
   export http_proxy=http://$proxy && \
