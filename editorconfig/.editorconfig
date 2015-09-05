@@ -9,3 +9,6 @@ tab_width = 4
 
 [*.{xml,java,gradle}]
 indent_size = 4
+
+[.gitconfig]
+indent_style = tab
