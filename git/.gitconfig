@@ -8,6 +8,8 @@
 [alias]
 	st = status
 	graph = log --graph --all --decorate
+	co = checkout
+	ci = commit --verbose
 [merge]
 	tool = meld
 [push]
