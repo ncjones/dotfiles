@@ -1,5 +1,5 @@
 # vim: ft=sh
-dev_tools=~/Development/Tools
+dev_tools=~/Tools
 export ANDROID_HOME=$dev_tools/android-sdk
 export ANDROID_KEYSTORE=/home/nathan/ownCloud/android.keystore
 export PATH="$HOME/.rvm/bin:$PATH"
