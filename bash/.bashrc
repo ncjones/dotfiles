@@ -13,6 +13,7 @@ shopt -s checkwinsize
 shopt -s globstar
 
 . ~/.bash_aliases
+. ~/.aliases
 . /etc/bash_completion
 
 # set LS_COLORS env var
