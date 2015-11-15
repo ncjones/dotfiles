@@ -30,6 +30,8 @@ Plug 'tpope/vim-markdown'
 Plug 'groenewege/vim-less'
 Plug 'rodjek/vim-puppet'
 Plug 'powerman/vim-plugin-AnsiEsc', { 'on': 'AnsiEsc' }
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
 call plug#end()
 
 colorscheme elflord
