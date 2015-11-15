@@ -1,0 +1,2 @@
+#!/bin/sh
+LD_LIBRARY_PATH=/usr/lib32/nvidia-346 /usr/bin/steam $@
