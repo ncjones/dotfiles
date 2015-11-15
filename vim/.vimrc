@@ -35,6 +35,7 @@ call plug#end()
 colorscheme elflord
 set hlsearch
 set ignorecase
+set smartcase
 map Q gq
 map <F2> :NERDTreeToggle<CR>
 map <F3> :NERDTreeFind<CR>
