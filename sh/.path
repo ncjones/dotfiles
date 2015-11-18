@@ -2,7 +2,7 @@
 dev_tools=~/Tools
 export ANDROID_HOME=$dev_tools/android-sdk
 export ANDROID_KEYSTORE=/home/nathan/ownCloud/android.keystore
-export PATH="$HOME/.rvm/bin:$PATH"
+export PATH=~/.rbenv/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/bin:$PATH
 export PATH=$PATH:$dev_tools/maven/bin
