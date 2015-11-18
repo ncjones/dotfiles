@@ -14,5 +14,10 @@ for d in $dirlist; do
     if [ -x $install_script ]; then
         $install_script
     fi
-    stow --dir $basedir --target $HOME --ignore 'install.sh' $d
+    stow \
+      --dir $basedir \
+      --target $HOME \
+      --ignore 'install.sh' \
+      --ignore '^[^\.].*' \
+      $d
 done
