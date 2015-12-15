@@ -1,3 +1,3 @@
 #!/bin/sh
-sudo ln -s /usr/lib/ssl/certs/owasp_zap_root_ca.pem ~/owasp_zap_root_ca.cer
+sudo ln -s ~/owasp_zap_root_ca.cer /usr/lib/ssl/certs/owasp_zap_root_ca.pem
 sudo c_rehash /usr/lib/ssl/certs
