@@ -11,6 +11,6 @@
 	co = checkout
 	ci = commit --verbose
 [merge]
-	tool = meld
+	tool = vimdiff
 [push]
 	default = simple
