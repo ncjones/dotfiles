@@ -3,7 +3,7 @@
 proxy='localhost:8888'
 alias proxyon="\
   export http_proxy=http://$proxy && \
-  export https_proxy=https://$proxy"
+  export https_proxy=http://$proxy"
 alias proxyoff='unset http_proxy https_proxy'
 alias xclipin='xclip -i -selection clipboard'
 alias xclipout='xclip -o -selection clipboard'
