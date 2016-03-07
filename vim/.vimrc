@@ -13,6 +13,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'rking/ag.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
