@@ -86,7 +86,7 @@ let g:ycm_filetype_blacklist = {}
 let g:ctrlp_by_filename = 1
 let g:ctrlp_user_command = {
   \ 'types': {
-    \ 1: ['.git', 'cd %s && cat <(git ls-files) <(git ls-files -o)'],
+    \ 1: ['.git', 'cd %s && git ls-files -co --exclude-standard'],
     \ 2: ['.hg', 'hg --cwd %s locate -I .'],
     \ },
   \ 'fallback': 'find %s
