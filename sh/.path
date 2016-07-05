@@ -9,6 +9,7 @@ export PATH=$PATH:$dev_tools/maven/bin
 export PATH=$PATH:$dev_tools/scala/bin
 export PATH=$PATH:$dev_tools/gradle/bin
 export PATH=$PATH:$dev_tools/packer
+export PATH=$PATH:$dev_tools/terraform
 export PATH=$PATH:$ANDROID_HOME/build-tools/android-4.4
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
