@@ -1,7 +1,7 @@
 #!/bin/sh
 
-basedir=$(cd $(dirname $0) && pwd)
-dirlist=$(find $basedir \
+basedir=$(cd "$(dirname "$0")" && pwd)
+dirlist=$(find "$basedir" \
             -maxdepth 1 \
             -mindepth 1 \
             -type d \
@@ -9,15 +9,15 @@ dirlist=$(find $basedir \
             -printf '%f\n' \
         )
 for d in $dirlist; do
-    echo installing $d
+    echo installing "$d"
     install_script=$basedir/$d/install.sh
-    if [ -x $install_script ]; then
+    if [ -x "$install_script" ]; then
         $install_script
     fi
     stow \
-      --dir $basedir \
-      --target $HOME \
+      --dir "$basedir" \
+      --target "$HOME" \
       --ignore 'install.sh' \
       --ignore '^[^\.].*' \
-      $d
+      "$d"
 done
