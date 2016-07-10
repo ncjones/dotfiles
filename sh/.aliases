@@ -1,10 +1,15 @@
 # vim: ft=sh
 
-proxy='localhost:8888'
-alias proxyon="\
-  export http_proxy=http://$proxy && \
-  export https_proxy=http://$proxy"
-alias proxyoff='unset http_proxy https_proxy'
+proxyon() {
+  proxy='localhost:8888'
+  export http_proxy=http://$proxy
+  export https_proxy=http://$proxy
+}
+
+proxyoff() {
+  unset http_proxy https_proxy
+}
+
 alias xclipin='xclip -i -selection clipboard'
 alias xclipout='xclip -o -selection clipboard'
 alias httpd='ruby -run -e httpd . -p 9090'
@@ -14,3 +19,4 @@ alias gr='
  cd "$(git rev-parse --show-cdup)".
 '
 alias tags='ctags -R --fields=+l'
+alias http='REQUESTS_CA_BUNDLE=$HOME/.mitmproxy/mitmproxy-ca-cert.cer http'
