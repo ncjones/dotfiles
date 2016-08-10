@@ -9,4 +9,6 @@ sudo apt-get install -y \
   stow \
   zsh \
   ctags \
-  shellcheck
+  shellcheck \
+  silversearcher-ag \
+  jq
