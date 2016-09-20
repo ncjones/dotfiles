@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ "$#" != "2" ]]; then
+  echo "usage: $0 <source_port> <proxy_port>"
+  exit 1
+fi
+sudo socat -dd tcp-listen:"$2",fork,reuseaddr tcp:localhost:"$1"

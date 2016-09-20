@@ -11,4 +11,5 @@ sudo apt-get install -y \
   ctags \
   shellcheck \
   silversearcher-ag \
-  jq
+  jq \
+  socat
