@@ -19,3 +19,4 @@ export PATH=$PATH:$dev_tools/leiningen
 export PATH=$PATH:$dev_tools/activator-1.2.0-minimal
 export PATH=$PATH:$dev_tools/liquibase
 export PATH=$PATH:$dev_tools/heimdall/bin
+export PATH=$PATH:$dev_tools/concourse
