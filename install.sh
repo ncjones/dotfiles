@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -e
 
 basedir=$(cd "$(dirname "$0")" && pwd)
 dirlist=$(find "$basedir" \
@@ -13,7 +15,7 @@ for d in $dirlist; do
     echo installing "$d"
     install_script=$basedir/$d/install.sh
     if [ -x "$install_script" ]; then
-        $install_script
+        $install_script || echo "ERROR: $install_script"
     fi
     stow \
       --dir "$basedir" \
