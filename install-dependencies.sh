@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install -y \
+type apt-get &> /dev/null && sudo apt-get install -y \
   python-dev \
   python3-dev \
   build-essential \
@@ -11,5 +11,18 @@ sudo apt-get install -y \
   ctags \
   shellcheck \
   silversearcher-ag \
+  jq \
+  socat
+
+type brew &> /dev/null && brew install \
+  python3 \
+  cmake \
+  vim \
+  tmux \
+  stow \
+  zsh \
+  ctags \
+  shellcheck \
+  ag \
   jq \
   socat
