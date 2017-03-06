@@ -12,6 +12,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'kien/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'rking/ag.vim'
+Plug 'osyo-manga/vim-over'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
@@ -43,9 +44,14 @@ set smartcase
 map Q gq
 map <F2> :NERDTreeToggle<CR>
 map <F3> :NERDTreeFind<CR>
-map <F4> :TlistToggle<CR>
 map <C-j> :GitGutterNextHunk<CR>
 map <C-k> :GitGutterPrevHunk<CR>
+
+nnoremap <Enter> :OverCommandLine<CR>
+vnoremap <Enter> :OverCommandLine<CR>
+nnoremap <BS> :nohlsearch<CR>
+nnoremap <F4> :OverCommandLine<CR>%s//gc<Left><Left><Left>
+nnoremap <S-F4> :OverCommandLine<CR>%s/<C-r><C-w>//gc<Left><Left><Left>
 
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
