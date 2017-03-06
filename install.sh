@@ -6,8 +6,9 @@ dirlist=$(find "$basedir" \
             -mindepth 1 \
             -type d \
             -not -name '.*' \
-            -printf '%f\n' \
+          | sed 's/[^/]*\///g'
         )
+
 for d in $dirlist; do
     echo installing "$d"
     install_script=$basedir/$d/install.sh
