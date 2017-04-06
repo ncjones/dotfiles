@@ -38,9 +38,12 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 call plug#end()
 
 colorscheme elflord
+highlight LineNr ctermfg=60
 set hlsearch
 set ignorecase
 set smartcase
+set number
+set relativenumber
 map Q gq
 map <F2> :NERDTreeToggle<CR>
 map <F3> :NERDTreeFind<CR>
