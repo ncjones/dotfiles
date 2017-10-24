@@ -120,3 +120,5 @@ let g:dbext_default_profile = 'keeper_local'
 "
 let vimclojure#ParenRainbow=1
 
+" syntastic java check is too slow
+let g:syntastic_ignore_files = ['\.java$']
