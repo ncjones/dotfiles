@@ -26,3 +26,5 @@ type brew &> /dev/null && brew install \
   ag \
   jq \
   socat
+
+sudo npm install -g xml2json-cli

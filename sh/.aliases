@@ -17,6 +17,8 @@ httpd() {
   ruby -run -e httpd . -p "${1:-9090}"
 }
 
+alias xj='xml2json /dev/stdin'
+
 # cd to git root
 alias gr='
  git branch > /dev/null 2>&1 || return 1
