@@ -12,7 +12,11 @@ proxyoff() {
 
 alias xclipin='xclip -i -selection clipboard'
 alias xclipout='xclip -o -selection clipboard'
-alias httpd='ruby -run -e httpd . -p 9090'
+
+httpd() {
+  ruby -run -e httpd . -p "${1:-9090}"
+}
+
 # cd to git root
 alias gr='
  git branch > /dev/null 2>&1 || return 1
