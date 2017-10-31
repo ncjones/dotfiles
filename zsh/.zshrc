@@ -9,3 +9,5 @@ eval "$(rbenv init -)"
 source ~/.aliases
 bindkey '^R' history-incremental-pattern-search-backward
 export TERM=xterm-256color
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"

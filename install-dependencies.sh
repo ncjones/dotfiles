@@ -25,6 +25,7 @@ type brew &> /dev/null && brew install \
   shellcheck \
   ag \
   jq \
-  socat
+  socat \
+  nvm
 
 sudo npm install -g xml2json-cli
