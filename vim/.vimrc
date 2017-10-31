@@ -126,3 +126,10 @@ let vimclojure#ParenRainbow=1
 
 " syntastic java check is too slow
 let g:syntastic_ignore_files = ['\.java$']
+
+
+"
+" table mode
+"
+let g:table_mode_corner = '|'
+
