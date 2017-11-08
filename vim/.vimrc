@@ -16,6 +16,7 @@ Plug 'osyo-manga/vim-over'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -128,6 +129,8 @@ let vimclojure#ParenRainbow=1
 " syntastic java check is too slow
 let g:syntastic_ignore_files = ['\.java$']
 
+" default ragtag maps
+let g:ragtag_global_maps = 1
 
 "
 " table mode
