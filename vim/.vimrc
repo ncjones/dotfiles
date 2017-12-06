@@ -59,9 +59,8 @@ map <C-k> :GitGutterPrevHunk<CR>
 
 nnoremap <Enter> :OverCommandLine<CR>
 vnoremap <Enter> :OverCommandLine<CR>
+nnoremap <F4> :OverCommandLine<CR> %s/<C-r><C-w>//Ig<Left><Left><Left>
 nnoremap <BS> :nohlsearch<CR>
-nnoremap <F4> :OverCommandLine<CR>%s//gc<Left><Left><Left>
-nnoremap <S-F4> :OverCommandLine<CR>%s/<C-r><C-w>//gc<Left><Left><Left>
 
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
