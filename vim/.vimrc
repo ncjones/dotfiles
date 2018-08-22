@@ -101,7 +101,14 @@ let g:ycm_filetype_blacklist = {}
 "
 let g:ctrlp_by_filename = 0
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --hidden --skip-vcs-ignores --ignore .git --ignore node_modules --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l -g ""
+      \ --hidden
+      \ --skip-vcs-ignores
+      \ --ignore .git
+      \ --ignore node_modules
+      \ --ignore target
+      \ --ignore target-eclipse
+      \ --nocolor'
 
 "
 " dbext
