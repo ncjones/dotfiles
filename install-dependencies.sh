@@ -15,6 +15,7 @@ type apt-get &> /dev/null && sudo apt-get install -y \
   socat
 
 type brew &> /dev/null && brew install \
+  wget \
   python3 \
   cmake \
   vim \
@@ -25,7 +26,7 @@ type brew &> /dev/null && brew install \
   shellcheck \
   ag \
   jq \
-  socat \
-  nvm
+  socat 
 
-sudo npm install -g xml2json-cli
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+# sudo npm install -g xml2json-cli
