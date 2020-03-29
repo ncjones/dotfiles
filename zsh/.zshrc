@@ -5,7 +5,6 @@ plugins=(aws git z)
 type dircolor &> /dev/null && eval `dircolors`
 source $ZSH/oh-my-zsh.sh
 source ~/.path
-eval "$(rbenv init -)"
 source ~/.aliases
 bindkey '^R' history-incremental-pattern-search-backward
 export TERM=xterm-256color
