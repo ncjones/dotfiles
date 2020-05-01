@@ -7,6 +7,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.path
 source ~/.aliases
 bindkey '^R' history-incremental-pattern-search-backward
+export EDITOR=vim
 export TERM=xterm-256color
 export NVM_DIR="$HOME/.nvm"
 export NVM_DIR="$HOME/.nvm"
