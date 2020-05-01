@@ -3,6 +3,7 @@
 	email = nathan@ncjones.com
 [core]
 	editor = vim
+	excludesfile = /Users/nathan/.gitignore_global
 [pull]
 	rebase = true
 [alias]
@@ -18,3 +19,5 @@
 	tool = vimdiff
 [push]
 	default = simple
+[color]
+	ui = auto
