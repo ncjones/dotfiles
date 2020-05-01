@@ -7,13 +7,14 @@ Nathan's personal dotfiles.
 Installing
 ----------
 
-Installation simply requires creating symlinks in the users $HOME dir to each
-dot file. All dot files can be installed using the install script (requires
-`stow`):
+1. Clone this repo into your $HOME:
 
-    $ ./install.sh
+        git clone git@github.com:ncjones/dotfiles.git
 
-Individual dot files can be installed with `stow`, for example (assuming this
-dir is a child of $HOME):
+2. Install dependencies with:
 
-    $ stow vim
+        ./install-dependencies.sh
+
+3. Install symlinks to all dot files with:
+
+        ./install.sh
