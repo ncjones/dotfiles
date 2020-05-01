@@ -1,4 +1,10 @@
 #!/bin/bash
+
+set -e
+
+git submodule init
+git submodule update
+
 type apt-get &> /dev/null && sudo apt-get install -y \
   python-dev \
   python3-dev \
@@ -26,7 +32,6 @@ type brew &> /dev/null && brew install \
   shellcheck \
   ag \
   jq \
-  socat 
+  socat
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-# sudo npm install -g xml2json-cli
