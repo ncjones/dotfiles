@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+dir="${1:-.}"
+port=${2:-9090}
+
+echo Starting Ruby HTTP server
+echo
+echo "Dir:    $(cd ${dir} && pwd)"
+echo "Server: http://localhost:${port}"
+echo
+
+ruby -run -e httpd "${dir}" -p "${port}"
