@@ -106,9 +106,14 @@ let g:ctrlp_user_command = 'ag %s -l -g ""
       \ --skip-vcs-ignores
       \ --ignore .git
       \ --ignore node_modules
+      \ --ignore vendor
+      \ --ignore _site
+      \ --ignore .sass-cache
       \ --ignore target
       \ --ignore target-eclipse
+      \ --ignore "*.swp"
       \ --nocolor'
+
 
 "
 " dbext
