@@ -53,6 +53,8 @@ set smartcase
 set number
 set relativenumber
 map Q gq
+map <F1> <nop>
+imap <F1> <nop>
 map <F2> :NERDTreeToggle<CR>
 map <F3> :NERDTreeFind<CR>
 map <C-j> :GitGutterNextHunk<CR>
