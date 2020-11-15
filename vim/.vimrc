@@ -15,6 +15,7 @@ Plug 'rking/ag.vim'
 Plug 'osyo-manga/vim-over'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'                          "
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-abolish'
