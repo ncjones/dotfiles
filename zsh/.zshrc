@@ -13,3 +13,8 @@ export NVM_DIR="$HOME/.nvm"
 export NVM_DIR="$HOME/.nvm"
 . "${NVM_DIR}/nvm.sh"
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+# If rbenv exists, init shims autocompletion
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)";
+fi
