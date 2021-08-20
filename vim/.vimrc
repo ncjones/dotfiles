@@ -39,6 +39,7 @@ Plug 'suan/vim-instant-markdown'
 Plug 'kylef/apiblueprint.vim'
 Plug 'groenewege/vim-less'
 Plug 'rodjek/vim-puppet'
+Plug 'glench/vim-jinja2-syntax'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'powerman/vim-plugin-AnsiEsc', { 'on': 'AnsiEsc' }
 Plug 'guns/vim-sexp'
