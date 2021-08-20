@@ -23,3 +23,5 @@
 	ui = auto
 [diff]
 	colorMoved = zebra
+[fetch]
+	prune = true
