@@ -23,3 +23,14 @@ alias gr='
 alias tags='ctags -R --fields=+l'
 alias http='REQUESTS_CA_BUNDLE=$HOME/.mitmproxy/mitmproxy-ca-cert.cer http'
 alias bc='bc -ql'
+
+t() {
+  which entr > /dev/null || {
+    echo "brew install entr"
+    return 1
+  }
+  projectRoot="$(git rev-parse --show-toplevel)" # for monorepo
+  commitedFiles="$(git diff origin/master... --name-only)"
+  changedFiles="$(git status --porcelain | awk '{print $2}')"
+  echo "$projectRoot/$commitedFiles" "$projectRoot/$changedFiles" | xargs ls | entr -c sh -c "echo && $*"
+}
