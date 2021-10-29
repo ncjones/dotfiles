@@ -66,6 +66,9 @@ vnoremap <Enter> :OverCommandLine<CR>
 nnoremap <F4> :OverCommandLine<CR> %s/<C-r><C-w>//Ig<Left><Left><Left>
 nnoremap <BS> :nohlsearch<CR>
 
+nnoremap H <C-o> " Browse code like you're using vimium back button
+nnoremap L <C-i> " Browse code like you're using vimium forward button
+
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
 " When editing a file, always jump to the last known cursor position.
