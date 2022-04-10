@@ -137,6 +137,8 @@ let vimclojure#ParenRainbow=1
 " syntastic java check is too slow
 let g:syntastic_ignore_files = ['\.java$']
 
+let g:syntastic_sh_shellcheck_args="-x"
+
 " default ragtag maps
 let g:ragtag_global_maps = 1
 
