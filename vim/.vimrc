@@ -5,6 +5,7 @@ set nocompatible
 filetype off
 
 call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-sensible'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
@@ -47,7 +48,8 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 call plug#end()
 
-colorscheme elflord
+colorscheme gruvbox
+set background=dark
 highlight LineNr ctermfg=60
 set hlsearch
 set ignorecase
