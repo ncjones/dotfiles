@@ -23,6 +23,7 @@ alias gr='
 alias tags='ctags -R --fields=+l'
 alias http='REQUESTS_CA_BUNDLE=$HOME/.mitmproxy/mitmproxy-ca-cert.cer http'
 alias bc='bc -ql'
+alias vimdiff='lvim -d'
 
 t() {
   which entr > /dev/null || {

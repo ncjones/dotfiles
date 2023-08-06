@@ -2,7 +2,7 @@
 	name = Nathan Jones
 	email = nathan@ncjones.com
 [core]
-	editor = vim
+	editor = lvim
 	excludesfile = /Users/nathan/.gitignore_global
 [pull]
 	rebase = true
