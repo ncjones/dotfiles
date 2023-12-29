@@ -13,4 +13,9 @@ lvim.plugins = {
   { "savq/melange-nvim", name = "melange", priority = 1000 },
   { "morhetz/gruvbox", name = "gruvbox", priority = 1000 },
   { 'rose-pine/neovim', name = 'rose-pine', priority = 1000 },
+  {
+    "tpope/vim-fugitive",
+    cmd = { "G", "Git", "Gdiffsplit", "Gread", "Gwrite", "Ggrep", "GMove", "GDelete", "GBrowse", "GRemove", "GRename", "Glgrep", "Gedit" },
+    ft = { "fugitive" }
+  },
 }
