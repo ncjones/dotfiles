@@ -4,6 +4,7 @@ export ANDROID_HOME=$dev_tools/android-sdk
 export ANDROID_KEYSTORE=/home/nathan/ownCloud/android.keystore
 export PATH=~/.local/bin:$PATH
 export PATH=~/bin:$PATH
+export PATH=~/go/bin:$PATH
 export PATH=$PATH:$dev_tools/maven/bin
 export PATH=$PATH:$dev_tools/scala/bin
 export PATH=$PATH:$dev_tools/gradle/bin
