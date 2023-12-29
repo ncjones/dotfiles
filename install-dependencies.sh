@@ -25,6 +25,7 @@ type brew &> /dev/null && brew install \
   python3 \
   cmake \
   vim \
+  nvm \
   tmux \
   stow \
   zsh \
@@ -34,5 +35,3 @@ type brew &> /dev/null && brew install \
   jq \
   yarn \
   socat
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
