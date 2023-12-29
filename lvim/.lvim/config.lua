@@ -13,6 +13,16 @@ lvim.plugins = {
   { "savq/melange-nvim", name = "melange", priority = 1000 },
   { "morhetz/gruvbox", name = "gruvbox", priority = 1000 },
   { 'rose-pine/neovim', name = 'rose-pine', priority = 1000 },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- use for stability; omit to use `main` branch for the latest features
+    event = "verylazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- configuration here, or leave empty to use defaults
+      })
+    end
+  },
   { "airblade/vim-gitgutter" },
   {
     "tpope/vim-fugitive",
