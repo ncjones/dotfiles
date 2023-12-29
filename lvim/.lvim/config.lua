@@ -3,7 +3,7 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 --
-lvim.colorscheme = "rose-pine-moon"
+lvim.colorscheme = "rose-pine"
 vim.opt.relativenumber = true
 
 lvim.builtin.which_key.mappings["s"]["w"] = { "<cmd>lua require'telescope.builtin'.grep_string()<CR>", "Word" }
