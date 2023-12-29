@@ -19,3 +19,5 @@ lvim.plugins = {
     ft = { "fugitive" }
   },
 }
+
+vim.api.nvim_set_keymap('n', '<C-L>', ":nohlsearch<Cr>", { noremap = true, silent = true });
