@@ -17,19 +17,3 @@ export NVM_DIR="$HOME/.nvm"
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)";
 fi
-
-# Define "light" and "dark" for manually switching iterm theme and set theme
-# automatically based on OS setting.
-# See: https://matthew.nz/view/automatic-dark-mode-for-iterm2
-terminal_profile() { echo -e "\033]1337;SetProfile=$1\a" }
-alias dark='export LC_APPEARANCE=dark && terminal_profile dark'
-alias light='export LC_APPEARANCE=light && terminal_profile light'
-if [ -z "$SSH_CLIENT" ]; then
-  # Detect OSX dark mode
-  appearance=$(defaults read -g AppleInterfaceStyle 2> /dev/null || echo "Light")
-  if [ $appearance = 'Dark' ]; then
-    dark
-  else
-    light
-  fi
-fi
