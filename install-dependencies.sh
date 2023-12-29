@@ -25,6 +25,7 @@ type brew &> /dev/null && brew install \
   python3 \
   cmake \
   vim \
+  iterm2 \
   nvm \
   tmux \
   stow \
