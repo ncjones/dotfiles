@@ -35,3 +35,6 @@ type brew &> /dev/null && brew install \
   jq \
   yarn \
   socat
+
+type brew &> /dev/null && brew install --cask \
+  font-mplus-nerd-font
