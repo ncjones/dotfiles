@@ -40,6 +40,7 @@ lvim.plugins = {
 }
 
 vim.api.nvim_set_keymap('n', '<C-L>', ":nohlsearch<Cr>", { noremap = true, silent = true });
+lvim.builtin.nvimtree.setup.view.width = 50
 
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
   return server ~= "eslint"
