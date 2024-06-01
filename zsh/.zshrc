@@ -1,5 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="pygmalion"
+ZSH_THEME="gnzh"
 plugins=(aws git z ag)
 type dircolor &> /dev/null && eval `dircolors`
 source $ZSH/oh-my-zsh.sh
