@@ -8,7 +8,7 @@
 	rebase = true
 [alias]
 	st = status --short --branch
-	graph = log --graph --all --decorate
+	graph = log --graph --all --decorate --pretty=short
 	co = checkout
 	ci = commit --verbose
 	please = push --force-with-lease
