@@ -3,13 +3,16 @@
 set -e
 
 basedir=$(cd "$(dirname "$0")" && pwd)
-dirlist=$(find "$basedir" \
-            -maxdepth 1 \
-            -mindepth 1 \
-            -type d \
-            -not -name '.*' \
-          | sed 's/[^/]*\///g'
-        )
+dirlist="$*"
+if [ -z "${dirlist}" ]; then
+  dirlist=$(find "${basedir}" \
+    -maxdepth 1 \
+    -mindepth 1 \
+    -type d \
+    -not -name '.*' \
+    | sed 's/[^/]*\///g'
+  )
+fi
 
 for d in $dirlist; do
     echo installing "$d"
