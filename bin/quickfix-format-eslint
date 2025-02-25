@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# https://vimhelp.org/quickfix.txt.html#errorformat
+# https://eslint.org/docs/latest/use/formatters/#json
+
+jq  '.[] |
+    select(.errorCount > 0) |
+    . as $file |
+    .messages[] |
+    [ $file.filePath, .line, .column, .message ] |
+    join(":")' -r
