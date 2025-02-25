@@ -57,3 +57,11 @@ lvim.builtin.nvimtree.setup.view.width = 50
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
   return server ~= "eslint"
 end, lvim.lsp.automatic_configuration.skipped_servers)
+
+vim.filetype.add({
+  extension = {
+    -- sadly there's no markdoc support
+    -- liquid is close enough
+    mdoc = 'liquid'
+  }
+})
