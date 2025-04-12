@@ -108,7 +108,11 @@ function M.setup()
     function(opts)
       local result = vim.fn.systemlist('ag --vimgrep ' .. opts.args)
       if vim.v.shell_error ~= 0 then
-        vim.notify(table.concat(result, '\n'), vim.log.levels.ERROR)
+        if #result == 0 then
+          vim.notify('No Results', vim.log.levels.WARN)
+        else
+          vim.notify(table.concat(result, '\n'), vim.log.levels.ERROR)
+        end
       else
         vim.fn.setqflist({}, ' ', {
           lines = result
