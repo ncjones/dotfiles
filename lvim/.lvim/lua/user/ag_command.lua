@@ -20,21 +20,41 @@ local function TruncatedBuffer(limit)
   end
 end
 
+local OrderedSet = {}
+OrderedSet.__index = OrderedSet
+
+function OrderedSet.new(list)
+  local self = setmetatable({ _order = {} }, OrderedSet)
+  for _, v in ipairs(list or {}) do
+    if not self[v] then
+      self:add(v)
+    end
+  end
+  return self
+end
+
+function OrderedSet:add(v)
+  self[v] = true
+  table.insert(self._order, v)
+end
+
+function OrderedSet:values()
+  return self._order
+end
+
 local function get_words_from_open_buffers()
   local min_length = 3
   local max_lines = 10000
-  local words = {}
-  local seen = {}
+  local words = OrderedSet.new()
   local buffers = vim.tbl_map(TruncatedBuffer(max_lines), vim.api.nvim_list_bufs())
   local open_buffers = vim.tbl_filter(function(b) return b:is_loaded() end, buffers)
   local buffer_words = vim.tbl_flatten(vim.tbl_map(function (b) return b:words() end, open_buffers))
   for _, word in ipairs(buffer_words) do
-    if #word >= min_length and not seen[word] then
-      seen[word] = true
-      table.insert(words, word)
+    if #word >= min_length then
+      words:add(word)
     end
   end
-  return words
+  return words:values()
 end
 
 local silver_searcher_opts = {
@@ -56,14 +76,17 @@ local silver_searcher_opts = {
 }
 
 local function case_insensitive_matches(words, lead)
-  -- return "starts-with" matches then "contains" matches
-  return vim.list_extend(
+  -- Return "starts-with" matches then "contains" matches.
+  -- Hack: This is causing duplicates when the lead starts with hyphen (eg /^-f/
+  -- and /.-f/ both match) so we wrap the result as an ordered set. Possibly we
+  -- could instead escape the user input when constructing the regex.
+  return OrderedSet.new(vim.list_extend(
     vim.tbl_filter(function (word)
       return word:lower():match('^' .. lead:lower())
     end, words),
     vim.tbl_filter(function (word)
       return word:lower():match('.' .. lead:lower())
-    end, words)
+    end, words))
   )
 end
 
@@ -71,10 +94,10 @@ local function ag_complete(arglead, cmdline, cursorpos)
   local parts = vim.split(cmdline:sub(1, cursorpos), '%s+')
   local argc = #parts - 1
   if arglead:match('^-') then
-    return case_insensitive_matches(silver_searcher_opts, arglead)
+    return case_insensitive_matches(silver_searcher_opts, arglead):values()
   end
   if argc == 1 then
-    return case_insensitive_matches(get_words_from_open_buffers(), arglead)
+    return case_insensitive_matches(get_words_from_open_buffers(), arglead):values()
   end
   return vim.fn.getcompletion(arglead, 'file')
 end
