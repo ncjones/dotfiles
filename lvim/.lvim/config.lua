@@ -65,3 +65,5 @@ vim.filetype.add({
     mdoc = 'liquid'
   }
 })
+
+require('user.ag_command').setup()
