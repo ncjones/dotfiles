@@ -77,15 +77,12 @@ local silver_searcher_opts = {
 
 local function case_insensitive_matches(words, lead)
   -- Return "starts-with" matches then "contains" matches.
-  -- Hack: This is causing duplicates when the lead starts with hyphen (eg /^-f/
-  -- and /.-f/ both match) so we wrap the result as an ordered set. Possibly we
-  -- could instead escape the user input when constructing the regex.
   return OrderedSet.new(vim.list_extend(
     vim.tbl_filter(function (word)
-      return word:lower():match('^' .. lead:lower())
+      return word:lower():match('^' .. vim.pesc(lead:lower()))
     end, words),
     vim.tbl_filter(function (word)
-      return word:lower():match('.' .. lead:lower())
+      return word:lower():match('.' .. vim.pesc(lead:lower()))
     end, words))
   )
 end
