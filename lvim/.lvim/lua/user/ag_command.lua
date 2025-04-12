@@ -84,14 +84,14 @@ function M.setup()
     'Ag',
     function(opts)
       local result = vim.fn.systemlist('ag --vimgrep ' .. opts.args)
-      vim.fn.setqflist({}, ' ', {
-        lines = result
-      })
       if vim.v.shell_error ~= 0 then
         vim.notify(table.concat(result, '\n'), vim.log.levels.ERROR)
-        return
+      else
+        vim.fn.setqflist({}, ' ', {
+          lines = result
+        })
+        vim.cmd('copen')
       end
-      vim.cmd('copen')
     end,
     {
       nargs = '+',
