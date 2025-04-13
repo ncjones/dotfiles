@@ -160,24 +160,26 @@ local function ag_complete(arglead, cmdline, cursorpos)
   return vim.fn.getcompletion(arglead, 'file')
 end
 
+local function ag_execute_command(opts)
+  local result = vim.fn.systemlist('ag --vimgrep ' .. opts.args)
+  if vim.v.shell_error ~= 0 then
+    if #result == 0 then
+      vim.notify('No Results', vim.log.levels.WARN)
+    else
+      vim.notify(table.concat(result, '\n'), vim.log.levels.ERROR)
+    end
+  else
+    vim.fn.setqflist({}, ' ', {
+      lines = result
+    })
+    vim.cmd('copen')
+  end
+end
+
 function M.setup()
   vim.api.nvim_create_user_command(
     'Ag',
-    function(opts)
-      local result = vim.fn.systemlist('ag --vimgrep ' .. opts.args)
-      if vim.v.shell_error ~= 0 then
-        if #result == 0 then
-          vim.notify('No Results', vim.log.levels.WARN)
-        else
-          vim.notify(table.concat(result, '\n'), vim.log.levels.ERROR)
-        end
-      else
-        vim.fn.setqflist({}, ' ', {
-          lines = result
-        })
-        vim.cmd('copen')
-      end
-    end,
+    ag_execute_command,
     {
       nargs = '+',
       complete = ag_complete
