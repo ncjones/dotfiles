@@ -65,6 +65,11 @@ local function get_words_from_open_buffers()
   local buffers = vim.tbl_map(TruncatedBuffer(max_lines), vim.api.nvim_list_bufs())
   local open_buffers = vim.tbl_filter(function(b) return b:is_loaded() end, buffers)
   local buffer_words = vim.tbl_flatten(vim.tbl_map(function (b) return b:words() end, open_buffers))
+  local last_search = vim.fn.getreg('/')
+  -- prepend latest search word as default suggestion
+  if #last_search > 0 then
+      words:add(last_search)
+  end
   for _, word in ipairs(buffer_words) do
     if #word >= min_length then
       words:add(word)
