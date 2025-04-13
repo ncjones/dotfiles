@@ -87,9 +87,70 @@ local function case_insensitive_matches(words, lead)
   )
 end
 
+local FileNode = {}
+FileNode.__index = FileNode
+
+function FileNode.new(parent, name)
+  return setmetatable({
+    parent = parent,
+    name = name,
+  }, FileNode)
+end
+
+function FileNode:path()
+  if self.parent == nil then
+    return self.name
+  end
+  return self.parent:path() .. '/' .. self.name
+end
+
+local function tbl_some(table, fn)
+  for _, item in ipairs(table) do
+    if (fn(item)) then return true end
+  end
+  return false
+end
+
+local function scan_dir_nodes(root, ignore_list)
+  local nodes = {}
+  local function scan(parent)
+    local fs = vim.loop.fs_scandir(parent:path())
+    if not fs then return end
+    while true do
+      local name, t = vim.loop.fs_scandir_next(fs)
+      if not name then break end
+      if tbl_some(ignore_list, function (regex) return name:find(regex) end) then
+        goto continue
+      end
+      local child = FileNode.new(parent, name)
+      if t == 'directory' then
+        table.insert(nodes, child)
+        scan(child)
+      end
+      ::continue::
+    end
+  end
+  scan(FileNode.new(nil, root))
+  return nodes
+end
+
+local function get_all_directories()
+  local ignore_list = {
+    '^node_modules$',
+    '^%.',
+  }
+  return vim.tbl_map(
+    function (node) return node.name end,
+    scan_dir_nodes(vim.fn.getcwd(), ignore_list)
+  )
+end
+
 local function ag_complete(arglead, cmdline, cursorpos)
   local parts = vim.split(cmdline:sub(1, cursorpos), '%s+')
   local argc = #parts - 1
+  if parts[argc] == '--ignore' then
+    return case_insensitive_matches(get_all_directories(), arglead):values()
+  end
   if arglead:match('^-') then
     return case_insensitive_matches(silver_searcher_opts, arglead):values()
   end
