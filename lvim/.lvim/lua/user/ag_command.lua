@@ -175,8 +175,10 @@ local function ag_complete(arglead, cmdline, cursorpos)
   if arglead:match('^-') then
     -- strip single leading dash so we can find similar suggestions
     -- eg: -count will suggest --max-count
-    local optlead = string.gsub(arglead, '^%-([^%-])', '%1')
-    return case_insensitive_matches(silver_searcher_opts, optlead):values()
+    if not string.match(arglead, '^%-%-') and #arglead > 2 then
+      arglead = string.gsub(arglead, '^%-', '')
+    end
+    return case_insensitive_matches(silver_searcher_opts, arglead):values()
   end
   if argc == 1 then
     return case_insensitive_matches(get_words_from_open_buffers(), arglead):values()
