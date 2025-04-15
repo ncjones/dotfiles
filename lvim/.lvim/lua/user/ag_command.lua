@@ -184,7 +184,7 @@ end
 local MAX_QF_RESULTS = 1000
 
 local function ag_execute_command(opts)
-  local result = vim.fn.systemlist('ag --vimgrep ' .. opts.args)
+  local result = vim.fn.systemlist('ag --vimgrep --silent ' .. opts.args)
   if vim.v.shell_error ~= 0 then
     if #result == 0 then
       vim.notify('No Results', vim.log.levels.WARN)
