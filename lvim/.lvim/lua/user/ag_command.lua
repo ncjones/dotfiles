@@ -181,6 +181,8 @@ local function ag_complete(arglead, cmdline, cursorpos)
   return vim.fn.getcompletion(arglead, 'file')
 end
 
+local MAX_QF_RESULTS = 1000
+
 local function ag_execute_command(opts)
   local result = vim.fn.systemlist('ag --vimgrep ' .. opts.args)
   if vim.v.shell_error ~= 0 then
@@ -189,12 +191,16 @@ local function ag_execute_command(opts)
     else
       vim.notify(table.concat(result, '\n'), vim.log.levels.ERROR)
     end
-  else
-    vim.fn.setqflist({}, ' ', {
-      lines = result
-    })
-    vim.cmd('copen')
+    return
   end
+  if #result > MAX_QF_RESULTS then
+    vim.notify('Truncated ag results to ' .. MAX_QF_RESULTS, vim.log.levels.WARN)
+    result = vim.list_slice(result, 1, MAX_QF_RESULTS)
+  end
+  vim.fn.setqflist({}, ' ', {
+    lines = result
+  })
+  vim.cmd('copen')
 end
 
 function M.setup()
