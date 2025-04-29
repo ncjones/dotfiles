@@ -166,6 +166,17 @@ local function get_all_directories()
   )
 end
 
+local function substring_file_completion(arglead)
+  local all_files = vim.fn.getcompletion('', 'file')
+  local matches = {}
+  for _, file in ipairs(all_files) do
+    if file:find(arglead, 1, true) then
+      table.insert(matches, file)
+    end
+  end
+  return matches
+end
+
 local function ag_complete(arglead, cmdline, cursorpos)
   local parts = vim.split(cmdline:sub(1, cursorpos), '%s+')
   local argc = #parts - 1
@@ -183,7 +194,7 @@ local function ag_complete(arglead, cmdline, cursorpos)
   if argc == 1 then
     return case_insensitive_matches(get_words_from_open_buffers(), arglead):values()
   end
-  return vim.fn.getcompletion(arglead, 'file')
+  return substring_file_completion(arglead)
 end
 
 local MAX_QF_RESULTS = 1000
