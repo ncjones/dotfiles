@@ -58,6 +58,14 @@ lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(serve
   return server ~= "eslint"
 end, lvim.lsp.automatic_configuration.skipped_servers)
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'astro', 'markdown', 'markdoc' },
+  callback = function()
+    -- enable html matchit words
+    vim.cmd('runtime! ftplugin/html.vim')
+  end,
+})
+
 vim.filetype.add({
   extension = {
     -- sadly there's no markdoc support
