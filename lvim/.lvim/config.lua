@@ -54,6 +54,10 @@ lvim.plugins = {
 vim.api.nvim_set_keymap('n', '<C-L>', ":nohlsearch<Cr>", { noremap = true, silent = true });
 lvim.builtin.nvimtree.setup.view.width = 50
 
+-- Scroll by "paragraphs" (functions in most languages) without cluttering Ctrl+o
+vim.keymap.set('n', '}', ':<C-u>keepjumps normal! }<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '{', ':<C-u>keepjumps normal! {<CR>', { noremap = true, silent = true })
+
 lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
   return server ~= "eslint"
 end, lvim.lsp.automatic_configuration.skipped_servers)
