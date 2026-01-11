@@ -23,10 +23,10 @@ alias gr='
 alias tags='ctags -R --fields=+l'
 alias http='REQUESTS_CA_BUNDLE=$HOME/.mitmproxy/mitmproxy-ca-cert.cer http'
 alias bc='bc -ql'
-alias vimdiff='lvim -d'
+alias vimdiff='nvim -d'
 
 t() {
-  which entr > /dev/null || {
+  which entr >/dev/null || {
     echo "brew install entr"
     return 1
   }
@@ -46,7 +46,7 @@ alias dark='export LC_APPEARANCE=dark && terminal_profile dark'
 alias light='export LC_APPEARANCE=light && terminal_profile light'
 if [ -z "$SSH_CLIENT" ]; then
   # Detect OSX dark mode
-  appearance=$(defaults read -g AppleInterfaceStyle 2> /dev/null || echo "Light")
+  appearance=$(defaults read -g AppleInterfaceStyle 2>/dev/null || echo "Light")
   if [ $appearance = 'Dark' ]; then
     dark
   else

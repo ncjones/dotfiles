@@ -2,7 +2,7 @@
 	name = Nathan Jones
 	email = nathan@ncjones.com
 [core]
-	editor = lvim
+	editor = nvim
 	excludesfile = /Users/nathan/.gitignore_global
 [pull]
 	rebase = true
@@ -17,9 +17,9 @@
 	grog = log --graph --abbrev-commit --decorate --all \
 		'--format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"'
 [merge]
-	tool = lvimdiff
-[mergetool "lvimdiff"]
-	cmd = "lvim -f -c \"Gdiffsplit!\" \"$MERGED\""
+	tool = nvimdiff
+[mergetool "nvimdiff"]
+	cmd = "nvim -f -c \"Gdiffsplit!\" \"$MERGED\""
 [push]
 	default = simple
 [color]
