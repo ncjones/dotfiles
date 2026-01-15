@@ -7,3 +7,5 @@ vim.filetype.add({
     mdoc = "liquid",
   },
 })
+
+vim.g.autoformat = false
