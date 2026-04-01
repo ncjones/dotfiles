@@ -34,3 +34,5 @@
 	enabled = true
 [rebase]
 	updateRefs = true
+[worktree]
+	useRelativePaths = true
